@@ -1,6 +1,13 @@
 {
   "name": "car-app",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Car app",
+  "author": {
+    "name": "Mazahir Hashimli",
+    "linkedin": "https://www.linkedin.com/in/mazahir-hashimli-086824106/",
+    "github": "https://github.com/mazahir89"
+  },
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
