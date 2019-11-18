@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CarsComponent } from './cars/cars.component';
 import { ReportComponent } from './report/report.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CarsAddComponent } from './cars/cars-add/cars-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarsComponent,
     ReportComponent,
-    DashboardComponent
+    DashboardComponent,
+    CarsAddComponent
   ],
   imports: [
     BrowserModule,
