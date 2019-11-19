@@ -12,7 +12,7 @@ export class CarService {
   constructor(private http: HttpClient) {
    }
    getCarById(carId: number): Observable<any> {
-    return this.http.get("/carRepo/" + carId);
+    return this.http.get("http://localhost:3000/carRepo/" + carId);
   }
 
   getCars() {
@@ -25,12 +25,12 @@ export class CarService {
   }
 
   deleteCar(carId: number) {
-    return this.http.delete("/carRepo/" + carId);
+    return this.http.delete("http://localhost:3000/carRepo/" + carId);
    
   }
 
   editCar(car: Car) {
 
-    return this.http.put("/carRepo/" + car.id, car);
+    return this.http.put("http://localhost:3000/carRepo/" + car.id, car);
   }
  }
