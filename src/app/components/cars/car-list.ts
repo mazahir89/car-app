@@ -1,8 +1,9 @@
-import { Car } from "../models/car";
-import { Engine } from '../models/engine';
+import { Car } from "../../models/car";
+import { Engine } from '../../models/engine';
 
 const cars: Car[] =  [
  {
+     id: 300,
      brand: "Renault",
      model: "Clio",
      engine: {
@@ -15,6 +16,7 @@ const cars: Car[] =  [
      year: 2012
  },
  {
+     id: 400,
     brand: "Peugeot",
     model: "207",
     engine: {
@@ -27,6 +29,7 @@ const cars: Car[] =  [
     year: 2010
 },
 {
+    id: 500,
     brand: "VW",
     model: "Polo",
     engine: {

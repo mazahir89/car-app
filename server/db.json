@@ -1,3 +1,30 @@
 {
-  "cars": []
+  "carRepo": [
+    {
+      "id": 1,
+      "brand": "Renault",
+      "model": "Clio",
+      "engine": {
+        "consumption": 2.2,
+        "fuel": "petrol",
+        "power": 130
+      },
+      "km": 100000,
+      "price": 7000,
+      "year": 2012
+    },
+    {
+      "id": 2,
+      "brand": "Peugeot",
+      "model": "207",
+      "engine": {
+        "consumption": 1.6,
+        "fuel": "petrol",
+        "power": 120
+      },
+      "km": 120000,
+      "price": 5000,
+      "year": 2010
+    }
+  ]
 }

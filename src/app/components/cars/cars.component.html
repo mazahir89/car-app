@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <ul class="list-group">
+                <li *ngFor="let car of cars" class="list-group-item">
+                    {{car.brand}} - {{car.model}}
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-5 well well-sm">
+            <app-cars-add (update)="getCars()"></app-cars-add>
+        </div>
+    </div>
+</div>
