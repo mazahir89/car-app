@@ -4,54 +4,100 @@
         <div class="form-group col-md-6">
             <input type="hidden" [(ngModel)] = "car.id" ngModel name="id">
             <label for="brand">Brand</label>
-            <input class="form-control" type="text" [(ngModel)] = "car.brand" #brand="ngModel" id="brand" name="brand">
+            <input class="form-control" required minlength="1" maxlength="50" #brand="ngModel" type="text" [(ngModel)] = "car.brand" #brand="ngModel" id="brand" name="brand" >
+            <div *ngIf="brand.invalid && (brand.touched || brand.dirty)">
+
+                <p *ngIf="brand.errors.required" class="text-danger">Value is required!</p>
+                <p *ngIf="brand.errors.maxlength" class="text-danger">Max length is {{ brand.errors.maxlength.requiredLength }} characters</p>
+                <p *ngIf="brand.errors.minlength" class="text-danger">Min length is {{ brand.errors.minlength.requiredLength }} characters</p>
+            </div>
         </div>
 
         <div class="form-group col-md-6">
             <label for="model">Model</label>
-            <input class="form-control" type="text" [(ngModel)] = "car.model" id="model" name="model">
+            <input class="form-control" required minlength="1" maxlength="50" #model="ngModel" type="text" [(ngModel)] = "car.model" id="model" name="model">
+            <div *ngIf="model.invalid && (model.touched || model.dirty)">
+
+                    <p *ngIf="model.errors.required" class="text-danger">Value is required!</p>
+                    <p *ngIf="model.errors.maxlength" class="text-danger">Max length is {{ model.errors.maxlength.requiredLength }} characters</p>
+                    <p *ngIf="model.errors.minlength" class="text-danger">Min length is {{ model.errors.minlength.requiredLength }} characters</p>
+    
+                </div>
         </div>
+
+        <div class="clearfix"></div>
 
         <div class="form-group col-md-4">
             <label for="year">Year</label>
-            <input class="form-control" type="number" [(ngModel)] = "car.year" id="year" name="year">
+            <input class="form-control" required type="number" #year="ngModel" [(ngModel)] = "car.year" id="year" name="year">
+            <div *ngIf="year.invalid && (year.touched || year.dirty)">
+
+                    <p *ngIf="year.errors.required" class="text-danger">Value is required!</p>
+    
+                </div>
         </div>
 
         <div class="form-group col-md-4">
             <label for="price">Price</label>
-            <input class="form-control" type="number" [(ngModel)] = "car.price" id="price" name="price">
+            <input class="form-control" required type="number" #price="ngModel" [(ngModel)] = "car.price" id="price" name="price">
+            <div *ngIf="price.invalid && (price.touched || price.dirty)">
+
+                    <p *ngIf="price.errors.required" class="text-danger">Value is required!</p>
+    
+                </div>
         </div>
 
         <div class="form-group col-md-4">
             <label for="km">Kilometers</label>
-            <input class="form-control" type="number" [(ngModel)] = "car.km" id="km" name="km">
+            <input class="form-control" required type="number" #km="ngModel" [(ngModel)] = "car.km" id="km" name="km">
+            <div *ngIf="km.invalid && (km.touched || km.dirty)">
+
+                    <p *ngIf="km.errors.required" class="text-danger">Value is required!</p>
+    
+                </div>
         </div>
+        <div class="clearfix"></div>
     </fieldset>
     <fieldset ngModelGroup="engine">
         <legend>Engine Info</legend>
         <div class="form-group col-md-12">
                 <label for="fuel">Fuel</label>
-                <select class="form-control" name="fuel" [(ngModel)] = "car.engine.fuel" id="fuel">
+                <select class="form-control" required name="fuel" #fuel="ngModel" [(ngModel)] = "car.engine.fuel" id="fuel">
                     <option value="">--- Empty ---</option>
                     <option value="petrol">Petrol</option>
                     <option value="diesel">Diesel</option>
                     <option value="electric">Electric</option>
                 </select>
+                <div *ngIf="fuel.invalid && (fuel.touched || fuel.dirty)">
+
+                        <p *ngIf="fuel.errors.required" class="text-danger">Value is required!</p>
+        
+                    </div>
             </div>
     
             <div class="form-group col-md-4">
                 <label for="power">Power</label>
-                <input class="form-control" type="number" [(ngModel)] = "car.engine.power" id="power" name="power">
+                <input class="form-control" max="200" required type="number" #power="ngModel" [(ngModel)] = "car.engine.power" id="power" name="power">
+                <div *ngIf="power.invalid && (power.touched || power.dirty)">
+
+                        <p *ngIf="power.errors.required" class="text-danger">Value is required!</p>
+                        <p *ngIf="power.errors.max" class="text-danger">Max value has to be 200</p>
+                    </div>
             </div>
     
             <div class="form-group col-md-4">
                 <label for="consumption">Consumption</label>
-                <input class="form-control" type="number" [(ngModel)] = "car.engine.consumption" id="consumption" name="consumption">
+                <input class="form-control" max="20" required type="number" #consumption="ngModel" [(ngModel)] = "car.engine.consumption" id="consumption" name="consumption">
+                <div *ngIf="consumption.invalid && (consumption.touched || consumption.dirty)">
+
+                        <p *ngIf="consumption.errors.required" class="text-danger">Value is required!</p>
+                        <p *ngIf="consumption.errors.max" class="text-danger">Max value has to be 20</p>
+                    </div>
             </div>
     </fieldset>
 
     <div class="btn-group">
-        <button class="btn btn-primary" type="submit"> {{ isAddAction(car.id) ? 'Add Car' : 'Edit Car' }} </button>
+        <button class="btn btn-primary" [disabled]="form.invalid" type="submit"> {{ isAddAction(car.id) ? 'Add Car' : 'Edit Car' }} </button>
         <button class="btn btn-danger" type="reset">Reset</button>
     </div>
 </form>
