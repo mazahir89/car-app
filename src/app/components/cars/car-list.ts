@@ -1,4 +1,4 @@
-import { Car } from "../../models/car";
+/* import { Car } from "../../models/car";
 import { Engine } from '../../models/engine';
 
 const cars: Car[] =  [
@@ -43,4 +43,4 @@ const cars: Car[] =  [
 }  
 ];
 
-export default cars;
+export default cars; */

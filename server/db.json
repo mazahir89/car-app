@@ -4,14 +4,14 @@
       "id": 1,
       "brand": "Renault",
       "model": "Clio",
+      "year": 2012,
+      "price": 7500,
+      "km": 112000,
       "engine": {
-        "consumption": 2.2,
         "fuel": "petrol",
-        "power": 130
-      },
-      "km": 100000,
-      "price": 7000,
-      "year": 2012
+        "power": 130,
+        "consumption": 9
+      }
     },
     {
       "id": 2,

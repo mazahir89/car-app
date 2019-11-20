@@ -9,8 +9,11 @@ import { CarService } from "../../../app/services/car.service";
 })
 export class CarsComponent implements OnInit {
   cars: Car[];
+  selectedCar: Car;
 
-  constructor(private carService: CarService) {}
+  constructor(private carService: CarService) {
+    this.selectedCar = new Car();
+  }
 
   ngOnInit() {
     this.getCars();
@@ -22,7 +25,26 @@ export class CarsComponent implements OnInit {
     });
   }
   editCar(carId: number) {
+
+    // This way we do not talk to DB
+    this.selectedCar = this.cars.find( 
+      (e: Car) => e.id === carId
+    );
+
+    //This way we can have some delay since it talks to DB
+/*     this.carService.getCarById(carId)
+    .subscribe(
+      (car: Car) =>  {
+        this.selectedCar = car;
+      },
+      error => {
+        alert('Could not retrieve car with id ' + carId);
+      }
+    ); */
+
+    //Passing the info of car to form
     
+
   }
 
   deleteCar(carId: number) {
