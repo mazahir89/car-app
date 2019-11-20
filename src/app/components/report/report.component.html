@@ -1,1 +1,39 @@
-<p>report works!</p>
+<div class="row">
+    <div class="col-md-7">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h2>Car Report</h2>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <table class="table">
+                        <tr>
+                            <td>Oldest car in lot</td>
+                            <td>{{ oldest?.brand }} - {{ oldest?.model }} / from {{ oldest?.year }}</td>
+                        </tr>
+                        <tr>
+                            <td>Most used car</td>
+                            <td>{{ mostUsed?.brand }} - {{ mostUsed?.model }} / {{ mostUsed?.km }} km</td>
+                        </tr>
+                        <tr>
+                            <td>Most efficient car</td>
+                            <td>{{ mostEfficient?.brand }} - {{ mostEfficient?.model }} /
+                                {{ mostEfficient?.engine?.consumption }}
+                                l/100km
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Most expensive car</td>
+                            <td>{{ mostExpensive?.brand }} - {{ mostExpensive?.model }} /
+                                {{ mostExpensive?.price | currency:'EUR' }}</td>
+                        </tr>
+                        <tr>
+                            <td>Total value of cars</td>
+                            <td>{{ total | currency: 'EUR' }}</td>
+                        </tr>
+                    </table>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,14 @@
+<ng-template #noCars>
 <div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3>Loading cars...</h3>
+        </div>
+    </div>
+</div>
+</ng-template>
+
+<div class="container" *ngIf="cars; else noCars">
     <div class="row">
         <div class="col-md-7">
             <div *ngFor="let car of cars" class="panel panel-info">
